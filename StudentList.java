@@ -5,22 +5,32 @@ public class StudentList {
 	public static void main(String[] args) {
 
 //		Check arguments
-		if(args[0].equals("a")) {
-			System.out.println("Loading data ...");			
+		
+		if (args[0].equals("a")) {
+
+			System.out.println("Loading data ...");
+
 			try {
-			BufferedReader s = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
-			String r = s.readLine();
-			String i[] = r.split(",");			
-			for(String j : i) { System.out.println(j); }
-			} catch (Exception e){} 
+				BufferedReader s = new BufferedReader(
+						new InputStreamReader(
+								new FileInputStream("students.txt")));
+				String r = s.readLine();
+				String i[] = r.split(",");
+				for (String j : i) {
+					System.out.println(j);
+				}
+			} catch (Exception e) {
+
+			}
+
 			System.out.println("Data Loaded.");
+
 		}
 		else if(args[0].equals("r")) 
 		{
 			System.out.println("Loading data ...");			
-			try {
+			try 
+			{
 			BufferedReader s = new BufferedReader(
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
@@ -30,12 +40,18 @@ public class StudentList {
 			Random x = new Random();
 				int y = x.nextInt();
 					System.out.println(i[y]);
-			} catch (Exception e){} 
+			}
+		 catch (Exception e)
+		 {
+
+		 } 
 			System.out.println("Data Loaded.");			
 		}
-		else if(args[0].contains("+")){
+		else if(args[0].contains("+"))
+		{
 			System.out.println("Loading data ...");			
-			try {
+			try 
+			{
 			BufferedWriter s = new BufferedWriter(
 					new FileWriter("students.txt", true));
 			String t = args[0].substring(1);
@@ -45,15 +61,20 @@ public class StudentList {
 	        String fd= dateFormat.format(d);
 			s.write(", "+t+"\nList last updated on "+fd);
 			s.close();
-			} catch (Exception e){}
+			} 
+			catch (Exception e)
+			{
+
+			}
 							
 			System.out.println("Data Loaded.");	
 		}
 		else if(args[0].contains("?")) 
 		{
 			System.out.println("Loading data ...");			
-			try {
-			BufferedReader s = new BufferedReader(
+			try
+			 {
+			 BufferedReader s = new BufferedReader(
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
 			String r = s.readLine();
@@ -61,7 +82,8 @@ public class StudentList {
 			boolean done = false;
 			String t = args[0].substring(1);
 			for(int idx = 0; idx<i.length && !done; idx++) {
-				if(i[idx].equals(t)) {
+				if(i[idx].equals(t))
+				 {
 					System.out.println("We found it!");
 						done=true;
 				}
