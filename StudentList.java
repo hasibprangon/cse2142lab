@@ -4,7 +4,10 @@ import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
 
-//		Check arguments
+           if(args == null || args[0].length() != 1){
+            System.out.println("Please provide a, r, ?, + or c as argument");
+            return;
+        }
 		
 		if (args[0].equals("a")) {
 
